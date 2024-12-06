@@ -8,6 +8,8 @@ SCRIPT_AUTHORS=("nxtgencat" "NamelessNanasi PEAKYCOMMAND")
 readonly ZORINCONF_URL="https://github.com/nxtgencat/zorinos/raw/refs/heads/main/zorinconf.xnt"
 readonly ZORIN_TEMP_DIR="$(pwd)/.temp"
 
+trap "echo 'Cleaning up...'; rm -rf $ZORIN_TEMP_DIR" EXIT
+
 # Function to detect Zorin OS version and codename
 detect_zorin_version() {
     # Check if the os-release file exists
